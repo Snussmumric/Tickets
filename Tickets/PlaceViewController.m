@@ -9,12 +9,16 @@
 
 #define ReuseIdentifier @"CellIdentifier"
 
-@interface PlaceViewController ()
+@interface PlaceViewController () {
+    NSMutableArray *filteredList;
+    BOOL isFiltered;
+}
 
 @property (nonatomic) PlaceType placeType;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) NSArray *currentArray;
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -32,12 +36,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    isFiltered = NO;
+    
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+
+
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0., 0., 320., 44.)];
+        self.tableView.tableHeaderView = _searchBar;
+    _searchBar.delegate = self;
     
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Города", @"Аэропорты"]];
     [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
@@ -50,6 +63,18 @@
         self.title = @"Откуда";
     } else {
         self.title = @"Куда";
+    }
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        isFiltered = NO;
+    } else {
+        isFiltered = YES;
+//        filteredList = [[NSMutableArray alloc]init];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(content BEGINSWITH[c] %@)", searchText];
+//        [_currentArray filteredArrayUsingPredicate:predicate];
+        NSLog(@"%@", _currentArray.firstObject);
     }
 }
 
