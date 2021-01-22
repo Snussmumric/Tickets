@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "MainViewController.h"
+#import "MapViewController.h"
 
 @interface SceneDelegate ()
 
@@ -21,11 +22,12 @@
     self.window = [[UIWindow alloc] initWithFrame: frame];
     [self.window makeKeyAndVisible];
     
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    
+//    MainViewController *mainViewController = [[MainViewController alloc] init];
+    MapViewController *firstController = [[MapViewController alloc] init];
+
 //    mainViewController.view.backgroundColor = [UIColor redColor];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: firstController];
     self.window.rootViewController = navigationController;
 
     UIWindowScene *windowsScene = (UIWindowScene*)scene;

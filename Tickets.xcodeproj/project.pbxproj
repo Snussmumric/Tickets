@@ -17,6 +17,9 @@
 		3A4E83F725A1BB0900862ED7 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E83F625A1BB0900862ED7 /* Ticket.m */; };
 		3A4E83FB25A1C98300862ED7 /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E83FA25A1C98300862ED7 /* TicketTableViewCell.m */; };
 		3A4E840B25A1D1AA00862ED7 /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E840A25A1D1AA00862ED7 /* TicketsViewController.m */; };
+		3A7E32EF25BAD550009597A4 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E32EE25BAD550009597A4 /* LocationService.m */; };
+		3A7E32F325BADDF1009597A4 /* MapPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E32F225BADDF1009597A4 /* MapPrice.m */; };
+		3A7E32F725BADF2A009597A4 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E32F625BADF2A009597A4 /* MapViewController.m */; };
 		3A839D7D2599E91E0002D397 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7A2599E91E0002D397 /* countries.json */; };
 		3A839D7E2599E91E0002D397 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7B2599E91E0002D397 /* cities.json */; };
 		3A839D7F2599E91E0002D397 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7C2599E91E0002D397 /* airports.json */; };
@@ -48,6 +51,12 @@
 		3A4E83FA25A1C98300862ED7 /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
 		3A4E840925A1D1AA00862ED7 /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
 		3A4E840A25A1D1AA00862ED7 /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
+		3A7E32ED25BAD550009597A4 /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		3A7E32EE25BAD550009597A4 /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		3A7E32F125BADDF1009597A4 /* MapPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPrice.h; sourceTree = "<group>"; };
+		3A7E32F225BADDF1009597A4 /* MapPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPrice.m; sourceTree = "<group>"; };
+		3A7E32F525BADF2A009597A4 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3A7E32F625BADF2A009597A4 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		3A839D7A2599E91E0002D397 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		3A839D7B2599E91E0002D397 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		3A839D7C2599E91E0002D397 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
@@ -123,6 +132,12 @@
 				3A4E83FA25A1C98300862ED7 /* TicketTableViewCell.m */,
 				3A4E840925A1D1AA00862ED7 /* TicketsViewController.h */,
 				3A4E840A25A1D1AA00862ED7 /* TicketsViewController.m */,
+				3A7E32ED25BAD550009597A4 /* LocationService.h */,
+				3A7E32EE25BAD550009597A4 /* LocationService.m */,
+				3A7E32F125BADDF1009597A4 /* MapPrice.h */,
+				3A7E32F225BADDF1009597A4 /* MapPrice.m */,
+				3A7E32F525BADF2A009597A4 /* MapViewController.h */,
+				3A7E32F625BADF2A009597A4 /* MapViewController.m */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -207,9 +222,12 @@
 				3A4E83F225A1A78400862ED7 /* APIManager.m in Sources */,
 				3A3032792599DC8A00B20BB7 /* MainViewController.m in Sources */,
 				3A30327F2599DCDD00B20BB7 /* Airport.m in Sources */,
+				3A7E32F325BADDF1009597A4 /* MapPrice.m in Sources */,
 				3AD544F42599D2E7000F9F43 /* SceneDelegate.m in Sources */,
+				3A7E32F725BADF2A009597A4 /* MapViewController.m in Sources */,
 				3A4E83F725A1BB0900862ED7 /* Ticket.m in Sources */,
 				3A3032832599DDAD00B20BB7 /* DataManager.m in Sources */,
+				3A7E32EF25BAD550009597A4 /* LocationService.m in Sources */,
 				3A3032722599DB6B00B20BB7 /* Country.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
