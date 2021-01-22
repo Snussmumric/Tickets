@@ -23,6 +23,7 @@
 		3A839D7D2599E91E0002D397 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7A2599E91E0002D397 /* countries.json */; };
 		3A839D7E2599E91E0002D397 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7B2599E91E0002D397 /* cities.json */; };
 		3A839D7F2599E91E0002D397 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A839D7C2599E91E0002D397 /* airports.json */; };
+		3AC1473B25BB5DE3001AD4DF /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1473A25BB5DE3001AD4DF /* TabBarController.m */; };
 		3AD544F12599D2E7000F9F43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD544F02599D2E7000F9F43 /* AppDelegate.m */; };
 		3AD544F42599D2E7000F9F43 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD544F32599D2E7000F9F43 /* SceneDelegate.m */; };
 		3AD544FC2599D2EA000F9F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD544FB2599D2EA000F9F43 /* Assets.xcassets */; };
@@ -60,6 +61,8 @@
 		3A839D7A2599E91E0002D397 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		3A839D7B2599E91E0002D397 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		3A839D7C2599E91E0002D397 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
+		3AC1473925BB5DE3001AD4DF /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		3AC1473A25BB5DE3001AD4DF /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		3AD544EC2599D2E7000F9F43 /* Tickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD544EF2599D2E7000F9F43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3AD544F02599D2E7000F9F43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				3A7E32F225BADDF1009597A4 /* MapPrice.m */,
 				3A7E32F525BADF2A009597A4 /* MapViewController.h */,
 				3A7E32F625BADF2A009597A4 /* MapViewController.m */,
+				3AC1473925BB5DE3001AD4DF /* TabBarController.h */,
+				3AC1473A25BB5DE3001AD4DF /* TabBarController.m */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				3A7E32F725BADF2A009597A4 /* MapViewController.m in Sources */,
 				3A4E83F725A1BB0900862ED7 /* Ticket.m in Sources */,
 				3A3032832599DDAD00B20BB7 /* DataManager.m in Sources */,
+				3AC1473B25BB5DE3001AD4DF /* TabBarController.m in Sources */,
 				3A7E32EF25BAD550009597A4 /* LocationService.m in Sources */,
 				3A3032722599DB6B00B20BB7 /* Country.m in Sources */,
 			);

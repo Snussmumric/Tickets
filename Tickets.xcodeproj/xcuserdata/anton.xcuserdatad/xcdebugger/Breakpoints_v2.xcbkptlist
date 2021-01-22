@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "145FC3A0-A85D-4285-A9AD-12204F0BE83C"
+            uuid = "FB05A5D4-C433-4C62-9C0C-FE3FE5D1AE8A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tickets/PlaceViewController.m"
+            filePath = "Tickets/TicketTableViewCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-searchBar:textDidChange:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3521B370-EB43-4EE6-8AF5-CE8C26798C7E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tickets/PlaceViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-setTicket:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

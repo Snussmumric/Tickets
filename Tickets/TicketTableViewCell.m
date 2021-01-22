@@ -67,8 +67,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
     _dateLabel.text = [dateFormatter stringFromDate:ticket.departure];
-//    NSURL *urlLogo = AirlineLogo(ticket.airline);
-//    [_airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
+    NSURL *urlLogo = [NSURL URLWithString:[NSString stringWithFormat:@"https://pics.avs.io/200/200/%@.png", ticket.airline]];
+    _airlineLogoView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:urlLogo]];
+
 }
 
 

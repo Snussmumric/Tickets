@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "MainViewController.h"
 #import "MapViewController.h"
+#import "TabBarController.h"
 
 @interface SceneDelegate ()
 
@@ -23,7 +24,8 @@
     [self.window makeKeyAndVisible];
     
 //    MainViewController *mainViewController = [[MainViewController alloc] init];
-    MapViewController *firstController = [[MapViewController alloc] init];
+//    MapViewController *firstController = [[MapViewController alloc] init];
+    TabBarController *firstController = [[TabBarController alloc] init];
 
 //    mainViewController.view.backgroundColor = [UIColor redColor];
     
