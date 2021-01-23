@@ -36,7 +36,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.obscuresBackgroundDuringPresentation = NO;
     _searchController.searchResultsUpdater = self;
     _searchArray = [NSArray new];
     

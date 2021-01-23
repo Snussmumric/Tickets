@@ -8,6 +8,7 @@
 #import "TabBarController.h"
 #import "MainViewController.h"
 #import "MapViewController.h"
+#import "CollectionViewController.h"
 
 
 @interface TabBarController ()
@@ -38,6 +39,11 @@
     mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Карта цен" image:[UIImage systemImageNamed:@"map"] selectedImage:[UIImage systemImageNamed:@"map.fill"]];
     UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     [controllers addObject:mapNavigationController];
+    
+    CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
+    collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Collection" image:[UIImage systemImageNamed:@"calendar.circle"] selectedImage:[UIImage systemImageNamed:@"calendar.circle.fill"]];
+    UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
+    [controllers addObject:collectionNavigationController];
     
     return controllers;
 }

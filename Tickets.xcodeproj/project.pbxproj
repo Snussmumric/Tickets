@@ -12,6 +12,7 @@
 		3A3032792599DC8A00B20BB7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A30326D2599DB2E00B20BB7 /* MainViewController.m */; };
 		3A30327F2599DCDD00B20BB7 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A30327E2599DCDD00B20BB7 /* Airport.m */; };
 		3A3032832599DDAD00B20BB7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3032822599DDAD00B20BB7 /* DataManager.m */; };
+		3A36C27925BB67B000C50C19 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A36C27825BB67B000C50C19 /* CollectionViewController.m */; };
 		3A4E83EE259B391000862ED7 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E83ED259B391000862ED7 /* PlaceViewController.m */; };
 		3A4E83F225A1A78400862ED7 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E83F125A1A78400862ED7 /* APIManager.m */; };
 		3A4E83F725A1BB0900862ED7 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E83F625A1BB0900862ED7 /* Ticket.m */; };
@@ -29,6 +30,7 @@
 		3AD544FC2599D2EA000F9F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD544FB2599D2EA000F9F43 /* Assets.xcassets */; };
 		3AD544FF2599D2EA000F9F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD544FD2599D2EA000F9F43 /* LaunchScreen.storyboard */; };
 		3AD545022599D2EA000F9F43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD545012599D2EA000F9F43 /* main.m */; };
+		3AE8549725BBF1B0003C5653 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8549625BBF1B0003C5653 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3A30327E2599DCDD00B20BB7 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
 		3A3032812599DDAD00B20BB7 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		3A3032822599DDAD00B20BB7 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		3A36C27725BB67B000C50C19 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		3A36C27825BB67B000C50C19 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		3A4E83EC259B391000862ED7 /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		3A4E83ED259B391000862ED7 /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		3A4E83F025A1A78400862ED7 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		3AD544FE2599D2EA000F9F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD545002599D2EA000F9F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD545012599D2EA000F9F43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AE8549525BBF1B0003C5653 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		3AE8549625BBF1B0003C5653 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,10 @@
 				3A7E32F625BADF2A009597A4 /* MapViewController.m */,
 				3AC1473925BB5DE3001AD4DF /* TabBarController.h */,
 				3AC1473A25BB5DE3001AD4DF /* TabBarController.m */,
+				3AE8549525BBF1B0003C5653 /* CollectionViewCell.h */,
+				3AE8549625BBF1B0003C5653 /* CollectionViewCell.m */,
+				3A36C27725BB67B000C50C19 /* CollectionViewController.h */,
+				3A36C27825BB67B000C50C19 /* CollectionViewController.m */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -224,8 +234,10 @@
 				3A3032772599DBAB00B20BB7 /* City.m in Sources */,
 				3A4E83FB25A1C98300862ED7 /* TicketTableViewCell.m in Sources */,
 				3AD545022599D2EA000F9F43 /* main.m in Sources */,
+				3AE8549725BBF1B0003C5653 /* CollectionViewCell.m in Sources */,
 				3A4E83F225A1A78400862ED7 /* APIManager.m in Sources */,
 				3A3032792599DC8A00B20BB7 /* MainViewController.m in Sources */,
+				3A36C27925BB67B000C50C19 /* CollectionViewController.m in Sources */,
 				3A30327F2599DCDD00B20BB7 /* Airport.m in Sources */,
 				3A7E32F325BADDF1009597A4 /* MapPrice.m in Sources */,
 				3AD544F42599D2E7000F9F43 /* SceneDelegate.m in Sources */,
