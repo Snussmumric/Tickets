@@ -20,7 +20,8 @@
         _departure = [self dateFromString:[dictionary valueForKey:@"depart_date"]];
         _returnDate = [self dateFromString:[dictionary valueForKey:@"return_date"]];
         _numberOfChanges = [[dictionary valueForKey:@"number_of_changes"] integerValue];
-        _value = [[dictionary valueForKey:@"value"] integerValue];
+//        _value = [[dictionary valueForKey:@"value"] integerValue];
+        _value = [dictionary valueForKey:@"value"];
         _distance = [[dictionary valueForKey:@"distance"] integerValue];
         _actual = [[dictionary valueForKey:@"actual"] boolValue];
     }

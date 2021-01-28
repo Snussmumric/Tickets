@@ -15,9 +15,14 @@
 @property (strong, nonatomic) NSDate *departure;
 @property (strong, nonatomic) NSDate *returnDate;
 @property (nonatomic) NSInteger numberOfChanges;
-@property (nonatomic) NSInteger value;
+@property (nonatomic) NSNumber* value;
 @property (nonatomic) NSInteger distance;
 @property (nonatomic) BOOL actual;
+@property (nonatomic, assign) NSNumber* flightNumber;
+@property (nonatomic, strong) NSString* destinationIATA;
+@property (nonatomic, strong) NSString* originIATA;
+
+
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary withOrigin: (City *)origin;
 

@@ -14,6 +14,8 @@
 @interface TicketsViewController ()
 @property (nonatomic, strong) NSArray *tickets;
 @property (nonatomic, strong) UISegmentedControl *favoriteSegment;
+@property (nonatomic, weak, readwrite) DataManager* dataManager;
+
 @end
 
 @implementation TicketsViewController {
@@ -62,7 +64,7 @@
         _favoriteSegment.frame = CGRectMake(0, 0, 400.0f, 30.0f);
         [_favoriteSegment addTarget:self action:@selector(segmentChanged) forControlEvents:UIControlEventValueChanged];
 
-        self.navigationItem.titleView = _favoriteSegment;
+//        self.navigationItem.titleView = _favoriteSegment;
 
 
 
@@ -104,11 +106,11 @@
     UIAlertAction *favoriteAction;
     if ([[CoreDataHelper sharedInstance] isFavorite: [_tickets objectAtIndex:indexPath.row]]) {
         favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            [[CoreDataHelper sharedInstance] removeFromFavorite:[_tickets objectAtIndex:indexPath.row]];
+            [[CoreDataHelper sharedInstance] removeFromFavorite:[self->_tickets objectAtIndex:indexPath.row]];
         }];
     } else {
         favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[CoreDataHelper sharedInstance] addToFavorite:[_tickets objectAtIndex:indexPath.row]];
+            [[CoreDataHelper sharedInstance] addToFavorite:[self->_tickets objectAtIndex:indexPath.row]];
         }];
     }
     
@@ -117,5 +119,6 @@
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
 
 @end

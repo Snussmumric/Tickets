@@ -12,17 +12,22 @@
 #import "MapPrice.h"
 #import "CoreDataHelper.h"
 #import "APIManager.h"
-#import "TicketsViewController.h"
+#import "Ticket.h"
+
 
 
 @interface MapViewController () <MKMapViewDelegate>
 @property (strong, nonatomic) MKMapView *mapView;
 @property (nonatomic, strong) LocationService *locationService;
 @property (nonatomic, strong) City *origin;
-@property (nonatomic, strong) NSArray *prices;
-@property (nonatomic, strong) MKPointAnnotation *annotation;
+@property (nonatomic, strong) NSArray<MapPrice*>* prices;
+//@property (nonatomic, strong) MKPointAnnotation *annotation;
 @property (nonatomic, strong) NSString * selectedTitle;
 @property (nonatomic) SearchRequest searchRequest;
+@property (nonatomic, strong) MapPrice *selectedPrice;
+@property (nonatomic, weak, readwrite) NSNumber* indexSelectedMapPrice;
+
+
 
 
 @end
@@ -78,28 +83,31 @@
  
     for (MapPrice *price in prices) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            _annotation = [[MKPointAnnotation alloc] init];
-            _annotation.title = [NSString stringWithFormat:@"%@ (%@)", price.destination.name, price.destination.code];
-            _annotation.subtitle = [NSString stringWithFormat:@"%ld руб.", (long)price.value];
-            _annotation.coordinate = price.destination.coordinate;
-            [_mapView addAnnotation: _annotation];
-            [_mapView setDelegate:self];
-            [_mapView viewForAnnotation:_annotation];
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            annotation.title = [NSString stringWithFormat:@"%@", price.destination.name];
+            annotation.subtitle = [NSString stringWithFormat:@"%ld руб.", (long)price.value];
+            annotation.coordinate = price.destination.coordinate;
+            [self->_mapView addAnnotation: annotation];
+            [self->_mapView setDelegate:self];
+            [self->_mapView viewForAnnotation:annotation];
         });
     }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    static NSString *identifier = @"MarkerIdentifier";
+    NSString *identifier = @"Map View";
     MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (!annotationView) {
-        annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        annotationView.canShowCallout = YES;
-        annotationView.calloutOffset = CGPointMake(-5.0, 5.0);
-        annotationView.image = [UIImage systemImageNamed:@"star"];
-//        annotationView.image
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    }
+    
+    annotationView = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    annotationView.canShowCallout = YES;
+    annotationView.calloutOffset = CGPointMake(-5.0, 5.0);
+    
+    UIButton *addToFavoriteButoon = [UIButton buttonWithType: UIButtonTypeContactAdd];
+    annotationView.rightCalloutAccessoryView = addToFavoriteButoon;
+    [addToFavoriteButoon addTarget: self action: @selector(addToFavorites) forControlEvents: UIControlEventTouchUpInside];
+    
     annotationView.annotation = annotation;
     return annotationView;
 }
@@ -109,33 +117,57 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    NSLog(@"didSelectAnnotationView %@", view.annotation.description);
     
-    [[APIManager sharedInstance] ticketsWithRequest:_searchRequest withCompletion:^(NSArray *tickets) {
-           if (tickets.count > 0) {
-               TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
-               [self.navigationController showViewController:ticketsViewController sender:self];
-           } else {
-               UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Увы!" message:@"По данному направлению билетов не найдено" preferredStyle: UIAlertControllerStyleAlert];
-               [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
-               [self presentViewController:alertController animated:YES completion:nil];
-           }
-       }];
-//    MKPointAnnotation * annotation = [[MKPointAnnotation alloc]init];
-//    annotation = view.annotation;
-//    _selectedTitle = [NSString stringWithFormat:@"%@",annotation.title];
-//
-//    if (isFavorites) return;
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
-//    UIAlertAction *favoriteAction;
-//    if ([[CoreDataHelper sharedInstance] isFavorite: [_tickets objectAtIndex:indexPath.row]]) {
-//        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//            [[CoreDataHelper sharedInstance] removeFromFavorite:[_tickets objectAtIndex:indexPath.row]];
-//        }];
-//    } else {
-//        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            [[CoreDataHelper sharedInstance] addToFavorite:[_tickets objectAtIndex:indexPath.row]];
-//        }];
+    NSUInteger index = [mapView.annotations indexOfObject:view.annotation];
+    NSLog(@"index no %lu",(unsigned long)index);
+    NSLog(@"City %@ - price %ld", self.prices[index].destination, (long)self.prices[index].value);
+    
+    NSString * selectedTitle = [NSString stringWithFormat:@"%@",view.annotation.title];
+    
+    for (int i = 0; i < self.prices.count; i++) {
+        MapPrice* price = self.prices[i];
+//        i=330;
+        City* city = price.destination;
+        if ([city.name isEqualToString: selectedTitle]) {
+            NSLog(@"You selected index: %d and City: %@", i , self.prices[i].destination.name);
+            self.indexSelectedMapPrice = [NSNumber numberWithInt: i];
+        }
+    }
+    
 
+}
+
+- (void) addToFavorites {
+      
+    NSInteger indexSelectedMapPrice = [self.indexSelectedMapPrice integerValue];
+    MapPrice* selectedPrice = self.prices[indexSelectedMapPrice];
+    Ticket* ticket = [Ticket new];
+    
+    ticket.airline = @"mapTicket";
+    ticket.departure = selectedPrice.departure;
+    ticket.flightNumber = selectedPrice.flightNumber;
+    ticket.from = selectedPrice.origin.code;
+    ticket.to = selectedPrice.destination.code;
+    ticket.price = selectedPrice.value;
+    ticket.returnDate = selectedPrice.returnDate;
+    
+    NSString* message = [NSString stringWithFormat: @"Do you want add to favorites ticket: %@ - %@ price: %@ ", ticket.from, ticket.to, ticket.price];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add to favorites?" message: message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //button click event
+        NSLog(@"YES Add");
+        [[CoreDataHelper sharedInstance] addToFavorite: ticket];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    NSLog(@"Action ADD!");
+    
 }
 
 
