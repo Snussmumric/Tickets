@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MapViewController.h"
 #import "CollectionViewController.h"
+#import "TicketsViewController.h"
 
 
 @interface TabBarController ()
@@ -44,6 +45,11 @@
     collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Collection" image:[UIImage systemImageNamed:@"calendar.circle"] selectedImage:[UIImage systemImageNamed:@"calendar.circle.fill"]];
     UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     [controllers addObject:collectionNavigationController];
+    
+    TicketsViewController *favoriteViewController = [[TicketsViewController alloc] initFavoriteTicketsController];
+        favoriteViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Избранное" image:[UIImage systemImageNamed:@"star"] selectedImage:[UIImage systemImageNamed:@"star.fill"]];
+        UINavigationController *favoriteNavigationController = [[UINavigationController alloc] initWithRootViewController:favoriteViewController];
+        [controllers addObject:favoriteNavigationController];
     
     return controllers;
 }

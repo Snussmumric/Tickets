@@ -72,5 +72,18 @@
 
 }
 
+- (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
+    _favoriteTicket = favoriteTicket;
+    
+    _priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteTicket.price];
+    _placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteTicket.from, favoriteTicket.to];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    _dateLabel.text = [dateFormatter stringFromDate:favoriteTicket.departure];
+    NSURL *urlLogo = [NSURL URLWithString:[NSString stringWithFormat:@"https://pics.avs.io/200/200/%@.png", favoriteTicket.airline]];
+    _airlineLogoView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:urlLogo]];
+}
+
 
 @end

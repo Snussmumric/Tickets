@@ -9,12 +9,15 @@
 #import "DataManager.h"
 #import "APIManager.h"
 #import "Ticket.h"
+#import "CoreDataHelper.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TicketTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) Ticket *ticket;
+@property (nonatomic, strong) FavoriteTicket *favoriteTicket;
 
 @end
 
