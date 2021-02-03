@@ -34,6 +34,11 @@
 		3AD544FC2599D2EA000F9F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD544FB2599D2EA000F9F43 /* Assets.xcassets */; };
 		3AD544FF2599D2EA000F9F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD544FD2599D2EA000F9F43 /* LaunchScreen.storyboard */; };
 		3AD545022599D2EA000F9F43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD545012599D2EA000F9F43 /* main.m */; };
+		3ADAAE6425CB1A2C002A3618 /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAE5E25CB1A2C002A3618 /* NotificationCenter.m */; };
+		3ADAAE6525CB1A2C002A3618 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAE5F25CB1A2C002A3618 /* ProgressView.m */; };
+		3ADAAE6625CB1A2C002A3618 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAE6225CB1A2C002A3618 /* PlaceViewController.m */; };
+		3ADAAE6A25CB1B05002A3618 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAE6825CB1B04002A3618 /* ContentViewController.m */; };
+		3ADAAE6E25CB1B42002A3618 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAE6D25CB1B42002A3618 /* FirstViewController.m */; };
 		3AE8549725BBF1B0003C5653 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8549625BBF1B0003C5653 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +91,16 @@
 		3AD544FE2599D2EA000F9F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD545002599D2EA000F9F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD545012599D2EA000F9F43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3ADAAE5E25CB1A2C002A3618 /* NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
+		3ADAAE5F25CB1A2C002A3618 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		3ADAAE6025CB1A2C002A3618 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		3ADAAE6125CB1A2C002A3618 /* NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		3ADAAE6225CB1A2C002A3618 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		3ADAAE6325CB1A2C002A3618 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		3ADAAE6825CB1B04002A3618 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		3ADAAE6925CB1B05002A3618 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		3ADAAE6C25CB1B42002A3618 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		3ADAAE6D25CB1B42002A3618 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		3AE8549525BBF1B0003C5653 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		3AE8549625BBF1B0003C5653 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +184,16 @@
 				3A9C105925C162540007E6DD /* Model.xcdatamodeld */,
 				3A9C106325C1632A0007E6DD /* CoreDataHelper.h */,
 				3A9C106425C1632A0007E6DD /* CoreDataHelper.m */,
+				3ADAAE6125CB1A2C002A3618 /* NotificationCenter.h */,
+				3ADAAE5E25CB1A2C002A3618 /* NotificationCenter.m */,
+				3ADAAE6025CB1A2C002A3618 /* PlaceViewController.h */,
+				3ADAAE6225CB1A2C002A3618 /* PlaceViewController.m */,
+				3ADAAE6325CB1A2C002A3618 /* ProgressView.h */,
+				3ADAAE5F25CB1A2C002A3618 /* ProgressView.m */,
+				3ADAAE6925CB1B05002A3618 /* ContentViewController.h */,
+				3ADAAE6825CB1B04002A3618 /* ContentViewController.m */,
+				3ADAAE6C25CB1B42002A3618 /* FirstViewController.h */,
+				3ADAAE6D25CB1B42002A3618 /* FirstViewController.m */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -247,6 +272,7 @@
 			files = (
 				3A4E83EE259B391000862ED7 /* PlaceViewController.m in Sources */,
 				3A9C106125C162E50007E6DD /* FavoriteTicket+CoreDataProperties.swift in Sources */,
+				3ADAAE6A25CB1B05002A3618 /* ContentViewController.m in Sources */,
 				3A4E840B25A1D1AA00862ED7 /* TicketsViewController.m in Sources */,
 				3AD544F12599D2E7000F9F43 /* AppDelegate.m in Sources */,
 				3A3032772599DBAB00B20BB7 /* City.m in Sources */,
@@ -256,6 +282,8 @@
 				3A9C105B25C162540007E6DD /* Model.xcdatamodeld in Sources */,
 				3A4E83F225A1A78400862ED7 /* APIManager.m in Sources */,
 				3A3032792599DC8A00B20BB7 /* MainViewController.m in Sources */,
+				3ADAAE6525CB1A2C002A3618 /* ProgressView.m in Sources */,
+				3ADAAE6625CB1A2C002A3618 /* PlaceViewController.m in Sources */,
 				3A36C27925BB67B000C50C19 /* CollectionViewController.m in Sources */,
 				3A30327F2599DCDD00B20BB7 /* Airport.m in Sources */,
 				3A7E32F325BADDF1009597A4 /* MapPrice.m in Sources */,
@@ -265,9 +293,11 @@
 				3A4E83F725A1BB0900862ED7 /* Ticket.m in Sources */,
 				3A3032832599DDAD00B20BB7 /* DataManager.m in Sources */,
 				3AC1473B25BB5DE3001AD4DF /* TabBarController.m in Sources */,
+				3ADAAE6E25CB1B42002A3618 /* FirstViewController.m in Sources */,
 				3A9C106025C162E50007E6DD /* FavoriteTicket+CoreDataClass.swift in Sources */,
 				3A7E32EF25BAD550009597A4 /* LocationService.m in Sources */,
 				3A3032722599DB6B00B20BB7 /* Country.m in Sources */,
+				3ADAAE6425CB1A2C002A3618 /* NotificationCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

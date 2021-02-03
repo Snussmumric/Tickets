@@ -7,10 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface ProgressView : UIView
 
-@end
++ (instancetype)sharedInstance;
 
-NS_ASSUME_NONNULL_END
+- (void)show:(void (^)(void))completion;
+- (void)dismiss:(void (^)(void))completion;
+
+@end
