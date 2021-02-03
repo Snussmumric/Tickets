@@ -2,7 +2,7 @@
 //  FavoriteTicket+CoreDataProperties.swift
 //  Tickets
 //
-//  Created by Антон Васильченко on 27.01.2021.
+//  Created by Антон Васильченко on 03.02.2021.
 //
 //
 
@@ -16,15 +16,15 @@ extension FavoriteTicket {
         return NSFetchRequest<FavoriteTicket>(entityName: "FavoriteTicket")
     }
 
+    @NSManaged public var airline: String?
     @NSManaged public var created: Date?
     @NSManaged public var departure: Date?
     @NSManaged public var expires: Date?
-    @NSManaged public var returnDate: Date?
-    @NSManaged public var airline: String?
-    @NSManaged public var from: String?
-    @NSManaged public var to: String?
-    @NSManaged public var price: Int64
     @NSManaged public var flightNumber: Int16
+    @NSManaged public var from: String?
+    @NSManaged public var price: Int64
+    @NSManaged public var returnDate: Date?
+    @NSManaged public var to: String?
 
 }
 
