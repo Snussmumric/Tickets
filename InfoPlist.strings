@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Tickets
+
+  Created by Антон Васильченко on 03.02.2021.
+  
+*/
+
+"CFBundleDisplayName" = "АВИАБИЛЕТЫ";
+"CFBundleName" = "АВИАБИЛЕТЫ";

@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  Tickets
+
+  Created by Антон Васильченко on 03.02.2021.
+  
+*/
+
+// TabBarController
+
+"search_tab" = "Search";
+"map_tab" = "Price map";
+"favorites_tab" = "Favorite";
+
+
+// MainViewController
+
+"main_from" = "From";
+"main_to" = "To";
+"main_search" = "Search";
+
+
+// FirstViewController
+
+"about_app_header" = "About";
+"tickets_header" = "Aviatickets";
+"map_price_header" = "Price map";
+"favorites_header" = "Favorite";
+
+"about_app_describe" = "App for searching tickets";
+"tickets_describe" = "Find cheapest tickets";
+"map_price_describe" = "View price map";
+"favorites_describe" = "Save tickets to favorite";
+
+"next_button" = "NEXT";
+"done_button" = "DONE";
+
+
+// TicketsViewController
+
+"tickets_title" = "Tickets";
+"add_to_favorite" = "Add to favorite";
+"remove_from_favorite" = "Remove from favorite";
+"remind_me" = "Remind";
+"ticket_reminder" = "Tickert reminder";
+"notification_will_be_sent" = "notification will be sent";
+"success" = "Success";
+
+// Alerts
+
+"error" = "Error";
+"tickets_not_found" = "No tickets for this destination";
+"close" = "Close";
+"not_set_place_arrival_or_departure" = "Need to set arrival and departure place";
+"actions_with_tickets" = "Actions with ticket";
+"actions_with_tickets_describe" = "What to do with ticket?";
+"not_determine_current_city" = "Unable to determine current city!";
+"sorry" = "Sorry!";
